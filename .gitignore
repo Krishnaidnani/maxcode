@@ -1,0 +1,81 @@
+# SpringBoot
+/backend/target/
+*.log
+*.class
+*.jar
+
+# Vue.js
+/frontend/.cache/
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local config files
+application-local.properties
+
+# Maven target folder
+/backend/target/
+/backend/.mvn/wrapper/maven-wrapper.jar
+
+# Eclipse / IntelliJ / VSCode IDE files
+/backend/.idea/
+/backend/*.iml
+/backend/.classpath
+/backend/.project
+/backend/.settings/
+
+# Maven logs
+/backend/logs/
+**/logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+/frontend/coverage/
+
+# Temporary files
+/backend/*.log
+/backend/*.tmp
+
+# Node modules
+/frontend/node_modules/
+
+# Vite cache
+/frontend/.vite/
+
+# Build output
+/frontend/dist/
+/frontend/build/
+
+# Local env files
+/frontend/.env
+/frontend/.env.*.local
+
+# VSCode settings
+/frontend/.vscode/
+
+# NPM logs
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Ignore all IDE and OS files in root
+*.log
+*.tmp
+*.swp
+.idea/
+.vscode/
+backend/.mvn
+frontend/coverage
+frontend/package-lock.json
+coverage/

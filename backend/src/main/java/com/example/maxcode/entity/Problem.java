@@ -4,21 +4,34 @@ import com.example.maxcode.enums.ProblemDifficulty;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 
 @Entity
-@Table(name="problems")
+
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@Table(
+        name = "problems",
+        indexes = {
+                @Index(name = "idx_problem_difficulty", columnList = "difficulty"),
+                @Index(name = "idx_problem_created_at", columnList = "created_at DESC")
+        }
+)
 public class Problem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "problem_number", unique = true)
-    private long id;
+    private Integer id;
 
     @NotNull(message="problem statement cannot be null")
     @Column(name="problem_statement")

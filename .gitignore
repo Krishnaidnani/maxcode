@@ -29,6 +29,7 @@ application-local.properties
 /backend/.classpath
 /backend/.project
 /backend/.settings/
+backend/src/main/resources/application.properties
 
 # Maven logs
 /backend/logs/

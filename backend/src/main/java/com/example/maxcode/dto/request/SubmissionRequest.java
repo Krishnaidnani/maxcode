@@ -27,9 +27,6 @@ public class SubmissionRequest {
     @NotNull(message = "Language is required")
     private Language language;
 
-    @NotNull(message = "status cannot be null")
-    private SubmissionStatus status;
-
     @NotBlank(message = "Code cannot be empty")
     private String code;
 }

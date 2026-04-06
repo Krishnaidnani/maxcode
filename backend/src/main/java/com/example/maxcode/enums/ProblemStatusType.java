@@ -1,6 +1,6 @@
 package com.example.maxcode.enums;
 
-public enum Problemstatus {
+public enum ProblemStatusType {
     ATTEMPTED,
     SOLVED
 }

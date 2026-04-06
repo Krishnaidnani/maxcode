@@ -5,6 +5,7 @@ import com.example.maxcode.dto.response.SubmissionResponse;
 import com.example.maxcode.entity.Problem;
 import com.example.maxcode.entity.Submission;
 import com.example.maxcode.entity.User;
+import com.example.maxcode.enums.SubmissionStatus;
 
 public class SubmissionMapper {
 
@@ -14,7 +15,7 @@ public class SubmissionMapper {
                 .problem(problem)
                 .language(dto.getLanguage())
                 .code(dto.getCode())
-                .status(dto.getStatus())
+                .status(SubmissionStatus.PENDING)
                 .runtime_ms(0)
                 .memory_used_mb(0)
                 .build();

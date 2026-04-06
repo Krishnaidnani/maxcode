@@ -4,6 +4,7 @@ import com.example.maxcode.enums.Language;
 import com.example.maxcode.enums.SubmissionStatus;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EntityListeners;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
@@ -22,10 +23,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 @Getter
 @Setter
 @NoArgsConstructor
@@ -36,7 +39,8 @@ import java.time.LocalDateTime;
         @Index(
                 name = "idx_user_problem_created",
                 columnList = "user_id, problem_id, timestamp DESC"
-        )
+        ),
+        @Index(name = "idx_user", columnList = "user_id")
 })
 public class Submission {
     @Id
@@ -65,10 +69,10 @@ public class Submission {
     private SubmissionStatus status;
 
     @Min(value = 1, message = "Time limit must be positive")
-    @Column(name = "runtime_ms", nullable = false)
+    @Column(name = "runtime_ms")
     private Integer runtime_ms;
 
-    @Column(name = "memory_used_mb",nullable = false)
+    @Column(name = "memory_used_mb")
     private Integer memory_used_mb;
 
     @CreatedDate

@@ -1,4 +1,5 @@
 package com.example.maxcode.entity;
+import com.example.maxcode.enums.ProblemStatusType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -38,7 +39,7 @@ public class ProblemStatus {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private ProblemStatus status;
+    private ProblemStatusType status;
 
     @Column(name = "last_submission_id")
     private Integer lastSubmissionId;
